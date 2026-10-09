@@ -1,4 +1,4 @@
-"""Portable, offline smoke tests of ONE skill of the split Grok edition (temporary files only)."""
+"""Portable, offline smoke tests of ONE skill of Stefan Sense Bundle for Grok (temporary files only)."""
 from pathlib import Path
 import importlib.util
 import json

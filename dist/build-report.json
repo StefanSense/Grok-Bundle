@@ -1,8 +1,8 @@
 {
-  "version": "1.2.0-grok-split",
+  "version": "2.1.1-grok",
   "source_version": "1.1.1-grok",
-  "package": "Stefan_Sense_Skills_Grok_1.2.0.zip",
-  "package_bytes": 14710467,
+  "package": "Stefan_Sense_Bundle_Grok_2.1.1.zip",
+  "package_bytes": 14708635,
   "library_workflows_in_several_skills": 42,
   "skills": [
     {
@@ -28,11 +28,11 @@
         "research-summarizer"
       ],
       "skill_file": "01_Тексты_и_языки.skill",
-      "skill_bytes": 237176,
-      "unpacked_bytes": 612300,
+      "skill_bytes": 237036,
+      "unpacked_bytes": 612011,
       "md_file": "01_Тексты_и_языки.md",
-      "md_bytes": 43487,
-      "skill_md_bytes": 28004
+      "md_bytes": 43485,
+      "skill_md_bytes": 28002
     },
     {
       "skill": "stefan-sense-marketing-sales",
@@ -53,11 +53,11 @@
         "investor-outreach"
       ],
       "skill_file": "02_Маркетинг_и_продажи.skill",
-      "skill_bytes": 1590273,
-      "unpacked_bytes": 3983170,
+      "skill_bytes": 1590140,
+      "unpacked_bytes": 3982881,
       "md_file": "02_Маркетинг_и_продажи.md",
-      "md_bytes": 80795,
-      "skill_md_bytes": 29042
+      "md_bytes": 80793,
+      "skill_md_bytes": 29040
     },
     {
       "skill": "stefan-sense-analysis",
@@ -94,11 +94,11 @@
         "zero-hallucination-coder"
       ],
       "skill_file": "03_Анализ.skill",
-      "skill_bytes": 2104721,
-      "unpacked_bytes": 5517219,
+      "skill_bytes": 2104581,
+      "unpacked_bytes": 5516930,
       "md_file": "03_Анализ.md",
-      "md_bytes": 32561,
-      "skill_md_bytes": 21808
+      "md_bytes": 32559,
+      "skill_md_bytes": 21806
     },
     {
       "skill": "stefan-sense-work-management",
@@ -116,11 +116,11 @@
         "runbook-generator"
       ],
       "skill_file": "04_Работа_и_менеджмент.skill",
-      "skill_bytes": 2772564,
-      "unpacked_bytes": 7615798,
+      "skill_bytes": 2772421,
+      "unpacked_bytes": 7615509,
       "md_file": "04_Работа_и_менеджмент.md",
-      "md_bytes": 44630,
-      "skill_md_bytes": 19999
+      "md_bytes": 44628,
+      "skill_md_bytes": 19997
     },
     {
       "skill": "stefan-sense-personal-growth",
@@ -138,11 +138,11 @@
         "syllabus"
       ],
       "skill_file": "05_Личное_развитие.skill",
-      "skill_bytes": 449897,
-      "unpacked_bytes": 1078811,
+      "skill_bytes": 449759,
+      "unpacked_bytes": 1078522,
       "md_file": "05_Личное_развитие.md",
-      "md_bytes": 30042,
-      "skill_md_bytes": 14631
+      "md_bytes": 30040,
+      "skill_md_bytes": 14629
     },
     {
       "skill": "stefan-sense-documents-visuals",
@@ -164,11 +164,11 @@
         "saas-metrics-coach"
       ],
       "skill_file": "06_Документы_и_визуал.skill",
-      "skill_bytes": 3706407,
-      "unpacked_bytes": 8098415,
+      "skill_bytes": 3706283,
+      "unpacked_bytes": 8098126,
       "md_file": "06_Документы_и_визуал.md",
-      "md_bytes": 37959,
-      "skill_md_bytes": 19076
+      "md_bytes": 37957,
+      "skill_md_bytes": 19074
     },
     {
       "skill": "stefan-sense-code-ai",
@@ -180,11 +180,11 @@
       "library": 299,
       "shared_copies": [],
       "skill_file": "07_Код_и_ИИ.skill",
-      "skill_bytes": 4577496,
-      "unpacked_bytes": 13117583,
+      "skill_bytes": 4577365,
+      "unpacked_bytes": 13117294,
       "md_file": "07_Код_и_ИИ.md",
-      "md_bytes": 67997,
-      "skill_md_bytes": 19714
+      "md_bytes": 67995,
+      "skill_md_bytes": 19712
     }
   ]
 }

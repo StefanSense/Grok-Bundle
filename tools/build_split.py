@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Build the split Grok edition of Stefan Sense Bundle.
+"""Build Stefan Sense Bundle 2.1.1 for Grok: seven standalone skills.
 
-Turns the full bundle ZIP (one big skill with a packed library) into standalone skills, one per
-area of work. Every skill is produced in two formats:
+Takes the source archive of the bundle (one skill with a packed library) and writes standalone
+skills, one per area of work. Every skill is produced in two formats:
 
   dist/skill/NN_<Title>.skill   ZIP with <slug>/SKILL.md, core workflows, the area's specialist
                                 library (unpacked), helper scripts, licences and a checksum manifest
@@ -17,7 +17,9 @@ Standard library only. Author of the bundle: M. Stefan Kassem (Stefan Sense), MI
 import argparse, hashlib, io, json, re, shutil, sys, zipfile
 from pathlib import Path, PurePosixPath
 
-VERSION = '1.2.0-grok-split'
+VERSION = '2.1.1-grok'
+RELEASE = VERSION.split('-')[0]
+BUNDLE_NAME = 'Stefan Sense Bundle %s for Grok' % RELEASE
 HERE = Path(__file__).resolve().parent
 ZIP_DATE = (2026, 10, 9, 0, 0, 0)
 MD_SHORT_REFERENCE_LIMIT = 10_000  # bytes; longer reference files stay in the .skill edition only
@@ -525,9 +527,9 @@ def skill_md(bundle, skill, placement):
     parts = [
         '---', 'name: ' + slug, 'description: ' + yaml_quote(description(skill)), '---', '',
         '# %s — Stefan Sense (Grok edition)' % skill['title'], '',
-        '*%s.* One of %d standalone skills of **Stefan Sense Bundle %s** by **M. Stefan Kassem (Stefan Sense)**, '
+        '*%s.* One of %d standalone skills of **%s** by **M. Stefan Kassem (Stefan Sense)**, '
         'built on open-source work by other authors — see `AUTHORS.md` and `THIRD_PARTY_NOTICES.md`. '
-        'All paths below are relative to the folder that contains this SKILL.md.' % (skill['title_en'], len(SKILLS), VERSION), '',
+        'All paths below are relative to the folder that contains this SKILL.md.' % (skill['title_en'], len(SKILLS), BUNDLE_NAME), '',
         RULES,
         '## Pick a workflow', '', pick_table(skill), '',
         'The complete core workflows are in this file (below); reference files for depth are in '
@@ -613,8 +615,8 @@ def md_edition(bundle, skill, placement):
         'this document; if one is needed, say that it is not loaded and continue with the matching core workflow. '
         'Commands that call `scripts/…` need the .skill edition; otherwise use Grok\'s native file tools or code '
         'execution.' % (skill['title'], len(skill['library'])), '',
-        '*%s.* One of %d standalone skills of **Stefan Sense Bundle %s** by **M. Stefan Kassem (Stefan Sense)**, '
-        'built on open-source work by other authors (Appendix C).' % (skill['title_en'], len(SKILLS), VERSION), '',
+        '*%s.* One of %d standalone skills of **%s** by **M. Stefan Kassem (Stefan Sense)**, '
+        'built on open-source work by other authors (Appendix C).' % (skill['title_en'], len(SKILLS), BUNDLE_NAME), '',
         RULES,
         '## Pick a workflow', '', pick_table(skill), '',
         'For multi-step tasks chain 2–4 workflows with an explicit output from each step. Paths such as '
@@ -678,13 +680,10 @@ def third_party_notices(bundle):
     text = replace_once(text, 'Full licence texts are in `licenses/`\n(and again inside `library/library.zip` → `licenses/`).',
                         'Full licence texts are in `library/licenses/`.', 'THIRD_PARTY_NOTICES.md')
     text = text.replace('| `licenses/LICENSE-', '| `library/licenses/LICENSE-')
-    text += ('\n## Split edition %s\n'
-             'The full bundle was split by M. Stefan Kassem (Stefan Sense) into %d standalone skills by area of work. '
-             'Library workflows are shipped unpacked inside the skill they belong to; their INSTRUCTIONS.md, workflow.md '
-             'and resource files are unchanged byte for byte (see `manifest.json`). Changes: new SKILL.md per skill; '
-             '`library/RUNTIME.md` wording adapted to the skill layout; `scripts/sense.py` and `scripts/selftest.py` '
-             'rewritten for the unpacked library; two path notes in core workflows (`documents`, `humanize-ru`) point '
-             'to the skill folder instead of the bundle root.\n' % (VERSION, len(SKILLS)))
+    text += ('\n## Structure of %s\n'
+             'The collection is organised by M. Stefan Kassem (Stefan Sense) as %d standalone skills by area of work. '
+             'Library workflows ship unpacked inside the skill they belong to, with their INSTRUCTIONS.md, workflow.md '
+             'and resource files; SHA-256 checksums of every file are in `manifest.json`.\n' % (BUNDLE_NAME, len(SKILLS)))
     return text
 
 
@@ -770,10 +769,10 @@ def package(out, report, placement):
             i, r['title'], r['skill'], ', '.join('`%s`' % c for c in r['core']), r['library'],
             r['skill_bytes'] / 1e6, r['md_bytes'] / 1e3))
     readme = (HERE / 'package_readme_ru.md').read_text(encoding='utf-8')
-    readme = readme.replace('{version}', VERSION).replace('{table}', '\n'.join(rows)).replace('{dups}', str(dups))
+    readme = readme.replace('{version}', RELEASE).replace('{table}', '\n'.join(rows)).replace('{dups}', str(dups))
     if re.search(r'\{[a-z]+\}', readme):
         fail('unfilled placeholder in package README')
-    target = out / ('Stefan_Sense_Skills_Grok_%s.zip' % VERSION.split('-')[0])
+    target = out / ('Stefan_Sense_Bundle_Grok_%s.zip' % RELEASE)
     with zipfile.ZipFile(target, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as z:
         def add(name, data):
             info = zipfile.ZipInfo(name, ZIP_DATE)

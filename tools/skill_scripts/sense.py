@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Stefan Sense - workflow router for ONE skill of the split Grok edition.
+"""Stefan Sense Bundle for Grok - workflow router for ONE skill of the set.
 
 Run from anywhere; paths are resolved against the skill folder (the folder with SKILL.md).
 
@@ -333,7 +333,7 @@ def list_items(category=None, tier=None):
 
 
 def main(argv=None):
-    ap = argparse.ArgumentParser(description='Stefan Sense skill router (split Grok edition)')
+    ap = argparse.ArgumentParser(description='Stefan Sense Bundle for Grok - skill router')
     sub = ap.add_subparsers(dest='cmd', required=True)
     p = sub.add_parser('search'); p.add_argument('query', nargs='+'); p.add_argument('--limit', type=int, default=8)
     p.add_argument('--core', action='store_true', help='core workflows only')

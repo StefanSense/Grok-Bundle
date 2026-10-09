@@ -1,6 +1,6 @@
-# Stefan Sense — навыки для Grok (раздельная версия)
+# Stefan Sense Bundle 2.1.1 для Grok
 
-Автор бандла — M. Stefan Kassem (Stefan Sense). Полный Stefan Sense Bundle 1.1.1 (Grok) разделён на 7 самостоятельных навыков:
+Автор — M. Stefan Kassem (Stefan Sense). Набор из 7 самостоятельных навыков для Grok: 32 основные методики для ежедневной работы и 586 специализированных методик.
 
 1. Тексты и языки
 2. Маркетинг и продажи
@@ -15,13 +15,13 @@
 - `.skill` — полный: SKILL.md, справочники, библиотека методик своей области и скрипты;
 - `.md` — компактный: один файл.
 
-**Скачать:** [`dist/Stefan_Sense_Skills_Grok_1.2.0.zip`](dist/Stefan_Sense_Skills_Grok_1.2.0.zip). Инструкция по установке и проверке — в `README.md` внутри архива (копия: [`dist/README.md`](dist/README.md)). Компактные `.md`-версии лежат в [`dist/md/`](dist/md/) и их можно смотреть прямо на GitHub.
+**Скачать:** [`dist/Stefan_Sense_Bundle_Grok_2.1.1.zip`](dist/Stefan_Sense_Bundle_Grok_2.1.1.zip) или из раздела Releases. Инструкция по установке и проверке — в `README.md` внутри архива (копия: [`dist/README.md`](dist/README.md)). Компактные `.md`-версии лежат в [`dist/md/`](dist/md/) и их можно смотреть прямо на GitHub.
 
-## Сборка из исходного бандла
+## Сборка
 
 ```bash
-python tools/build_split.py Stefan_Sense_Bundle_Grok.zip --out dist --work build   # сборка и архив
-python tools/validate_dist.py Stefan_Sense_Bundle_Grok.zip dist                    # независимая проверка
+python tools/build_split.py <исходный архив бандла> --out dist --work build   # сборка навыков и архива
+python tools/validate_dist.py <исходный архив бандла> dist                    # независимая проверка
 ```
 
 - **`build_split.py`** сначала проверяет контрольные суммы исходного архива (`catalog.json`, `manifest.json`, `library.zip`). Затем раскладывает основные методики и библиотеку по навыкам; распределение задано таблицами `SKILLS`, `CATEGORY_HOME` и `OVERRIDES` в начале скрипта. После этого собирает `.skill` и `.md` и упаковывает всё в один архив. Сборка воспроизводима: при одинаковом входе получается побайтово тот же архив.
@@ -29,7 +29,7 @@ python tools/validate_dist.py Stefan_Sense_Bundle_Grok.zip dist                 
   - структуру ZIP;
   - YAML-заголовки по лимитам Agent Skills;
   - все пути и ссылки;
-  - побайтовое совпадение библиотеки с оригиналом;
+  - совпадение библиотеки с исходником;
   - полноту основных методик;
   - размещение всех 32 + 586 методик.
 
