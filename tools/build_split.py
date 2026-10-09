@@ -401,6 +401,9 @@ def replace_once(text, old, new, where):
 
 
 def adapt_core(cid, text):
+    if cid == 'product-marketing':
+        text = replace_once(text, 'adapted to ChatGPT and Grok Projects by Stefan Sense',
+                            'adapted to Grok Projects by Stefan Sense', cid)
     if cid == 'documents':
         text = replace_once(text, '(paths relative to the bundle root)',
                             '(paths relative to the skill folder — the folder that contains SKILL.md)', cid)
@@ -675,6 +678,12 @@ def index_md(bundle, skill):
     return '\n'.join(lines) + '\n'
 
 
+def authors(bundle):
+    return replace_once(bundle.text('AUTHORS.md'),
+                        'specialist library to ChatGPT (web, ChatGPT Work, desktop app, Codex) and Grok (grok.com Skills, Grok Build).',
+                        'specialist library to Grok (grok.com Skills, Grok Build).', 'AUTHORS.md')
+
+
 def third_party_notices(bundle):
     text = bundle.text('THIRD_PARTY_NOTICES.md')
     text = replace_once(text, 'Full licence texts are in `licenses/`\n(and again inside `library/library.zip` → `licenses/`).',
@@ -692,8 +701,8 @@ def build_tree(bundle, skill, placement, work):
     if root.exists():
         shutil.rmtree(root)
     write(root / 'SKILL.md', skill_md(bundle, skill, placement))
-    for name in ('LICENSE', 'AUTHORS.md'):
-        write(root / name, bundle.files[name])
+    write(root / 'LICENSE', bundle.files['LICENSE'])
+    write(root / 'AUTHORS.md', authors(bundle))
     write(root / 'THIRD_PARTY_NOTICES.md', third_party_notices(bundle))
     write(root / 'VERSION', VERSION + '\n')
     for cid in skill['core']:
