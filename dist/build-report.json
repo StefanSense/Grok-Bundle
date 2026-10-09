@@ -1,0 +1,190 @@
+{
+  "version": "1.2.0-grok-split",
+  "source_version": "1.1.1-grok",
+  "package": "Stefan_Sense_Skills_Grok_1.2.0.zip",
+  "package_bytes": 14710467,
+  "library_workflows_in_several_skills": 42,
+  "skills": [
+    {
+      "skill": "stefan-sense-texts-languages",
+      "title": "Тексты и языки",
+      "core": [
+        "write",
+        "edit",
+        "humanize-ru",
+        "humanize-en",
+        "translate",
+        "summarize",
+        "email"
+      ],
+      "library": 10,
+      "shared_copies": [
+        "brand-voice",
+        "cold-email",
+        "content-production",
+        "deepread",
+        "email-sequence",
+        "i18n-sync",
+        "research-summarizer"
+      ],
+      "skill_file": "01_Тексты_и_языки.skill",
+      "skill_bytes": 237176,
+      "unpacked_bytes": 612300,
+      "md_file": "01_Тексты_и_языки.md",
+      "md_bytes": 43487,
+      "skill_md_bytes": 28004
+    },
+    {
+      "skill": "stefan-sense-marketing-sales",
+      "title": "Маркетинг и продажи",
+      "core": [
+        "copywriting",
+        "ad-creative",
+        "social",
+        "product-marketing",
+        "content-plan",
+        "seo",
+        "sales"
+      ],
+      "library": 74,
+      "shared_copies": [
+        "competitive-teardown",
+        "contract-and-proposal-writer",
+        "investor-outreach"
+      ],
+      "skill_file": "02_Маркетинг_и_продажи.skill",
+      "skill_bytes": 1590273,
+      "unpacked_bytes": 3983170,
+      "md_file": "02_Маркетинг_и_продажи.md",
+      "md_bytes": 80795,
+      "skill_md_bytes": 29042
+    },
+    {
+      "skill": "stefan-sense-analysis",
+      "title": "Анализ",
+      "core": [
+        "research",
+        "fact-check",
+        "data-analysis",
+        "decision",
+        "strategy"
+      ],
+      "library": 57,
+      "shared_copies": [
+        "campaign-analytics",
+        "ceo-advisor",
+        "cfo-advisor",
+        "challenge",
+        "competitive-intel",
+        "competitive-teardown",
+        "council",
+        "decision-logger",
+        "exec-decide",
+        "experiment-designer",
+        "hard-call",
+        "intl-expansion",
+        "investor-materials",
+        "launch-strategy",
+        "pricing-strategy",
+        "product-analytics",
+        "santa-method",
+        "scenario-war-room",
+        "stress-test",
+        "strict-api",
+        "zero-hallucination-coder"
+      ],
+      "skill_file": "03_Анализ.skill",
+      "skill_bytes": 2104721,
+      "unpacked_bytes": 5517219,
+      "md_file": "03_Анализ.md",
+      "md_bytes": 32561,
+      "skill_md_bytes": 21808
+    },
+    {
+      "skill": "stefan-sense-work-management",
+      "title": "Работа и менеджмент",
+      "core": [
+        "meeting",
+        "project-plan",
+        "product",
+        "contract-review"
+      ],
+      "library": 140,
+      "shared_copies": [
+        "blueprint",
+        "plan-orchestrate",
+        "runbook-generator"
+      ],
+      "skill_file": "04_Работа_и_менеджмент.skill",
+      "skill_bytes": 2772564,
+      "unpacked_bytes": 7615798,
+      "md_file": "04_Работа_и_менеджмент.md",
+      "md_bytes": 44630,
+      "skill_md_bytes": 19999
+    },
+    {
+      "skill": "stefan-sense-personal-growth",
+      "title": "Личное развитие",
+      "core": [
+        "career",
+        "learn",
+        "productivity"
+      ],
+      "library": 14,
+      "shared_copies": [
+        "deep-learning-book",
+        "deepread",
+        "linkedin-profile",
+        "syllabus"
+      ],
+      "skill_file": "05_Личное_развитие.skill",
+      "skill_bytes": 449897,
+      "unpacked_bytes": 1078811,
+      "md_file": "05_Личное_развитие.md",
+      "md_bytes": 30042,
+      "skill_md_bytes": 14631
+    },
+    {
+      "skill": "stefan-sense-documents-visuals",
+      "title": "Документы и визуал",
+      "core": [
+        "documents",
+        "spreadsheets",
+        "presentations",
+        "visual"
+      ],
+      "library": 37,
+      "shared_copies": [
+        "board-deck-builder",
+        "brand-guidelines",
+        "capacity-planner",
+        "commercial-forecaster",
+        "financial-analyst",
+        "investor-materials",
+        "saas-metrics-coach"
+      ],
+      "skill_file": "06_Документы_и_визуал.skill",
+      "skill_bytes": 3706407,
+      "unpacked_bytes": 8098415,
+      "md_file": "06_Документы_и_визуал.md",
+      "md_bytes": 37959,
+      "skill_md_bytes": 19076
+    },
+    {
+      "skill": "stefan-sense-code-ai",
+      "title": "Код и ИИ",
+      "core": [
+        "code",
+        "prompt"
+      ],
+      "library": 299,
+      "shared_copies": [],
+      "skill_file": "07_Код_и_ИИ.skill",
+      "skill_bytes": 4577496,
+      "unpacked_bytes": 13117583,
+      "md_file": "07_Код_и_ИИ.md",
+      "md_bytes": 67997,
+      "skill_md_bytes": 19714
+    }
+  ]
+}

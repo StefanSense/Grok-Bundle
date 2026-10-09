@@ -1,0 +1,4 @@
+__pycache__/
+build/
+# single .skill files are inside the release ZIP in dist/
+dist/skill/
